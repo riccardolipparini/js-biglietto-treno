@@ -38,8 +38,6 @@ if (age < diciotto){
     elemento.innerHTML = `il prezzo totale è: ${totale}`
 
 } else {
-    const calcolo = km * prezzo
-    calcolo = calcolo.toFixed(2)
     elemento.innerHTML = `il prezzo totale è: ${calcolo}`
 }
 
