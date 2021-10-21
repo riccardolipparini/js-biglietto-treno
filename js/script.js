@@ -6,17 +6,40 @@
 // valori base
 const elemento = document.getElementById("calcolobiglietto")
 const diciotto = 18
+const over60 = 60
 const prezzo = 0.21
+
 
 
 
 // chiedi all'utente quanti km deve percorrere
 let km = prompt("Quanti km dovrai percorrere?")
 
+// // calcola il prezzo
+ const calcolo = km * prezzo
+
+
+
+
 // chiedi quanti anni ha
 let age = prompt("Quanti anni hai?")
 
 // calcolo il prezzo del biglietto in base all'età
 if (age < diciotto){
+    let discount = ((km * prezzo) * 20) / 100
+    let totale = calcolo - discount
+    totale = totale.toFixed(2)
+    elemento.innerHTML = `il prezzo totale è: ${totale}`
     
+} else if (age > over60){
+    let discount = ((km * prezzo) * 40) / 100
+    let totale = calcolo - discount
+    totale = totale.toFixed(2)
+    elemento.innerHTML = `il prezzo totale è: ${totale}`
+
+} else {
+    const calcolo = km * prezzo
+    calcolo = calcolo.toFixed(2)
+    elemento.innerHTML = `il prezzo totale è: ${calcolo}`
 }
+
