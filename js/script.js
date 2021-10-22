@@ -16,7 +16,7 @@ const prezzo = 0.21
 let km = prompt("Quanti km dovrai percorrere?")
 
 // // calcola il prezzo
- const calcolo = km * prezzo
+ let calcolo = km * prezzo
 
 
 
@@ -26,16 +26,18 @@ let age = prompt("Quanti anni hai?")
 
 // calcolo il prezzo del biglietto in base all'età
 if (age < diciotto){
-    let discount = ((km * prezzo) * 20) / 100
-    let totale = calcolo - discount
-    totale = totale.toFixed(2)
-    elemento.innerHTML = `il prezzo totale è: ${totale}`
+    // let discount = ((km * prezzo) * 20) / 100
+    // let totale = calcolo - discount
+    calcolo -= calcolo * 0.2
+    calcolo = calcolo.toFixed(2)
+    elemento.innerHTML = `il prezzo totale è: ${calcolo}`
     
 } else if (age > over60){
-    let discount = ((km * prezzo) * 40) / 100
-    let totale = calcolo - discount
-    totale = totale.toFixed(2)
-    elemento.innerHTML = `il prezzo totale è: ${totale}`
+    // let discount = ((km * prezzo) * 40) / 100
+    // let totale = calcolo - discount
+    calcolo -= calcolo * 0.4
+    calcolo = calcolo.toFixed(2)
+    elemento.innerHTML = `il prezzo totale è: ${calcolo}`
 
 } else {
     elemento.innerHTML = `il prezzo totale è: ${calcolo}`
